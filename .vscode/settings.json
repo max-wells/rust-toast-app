@@ -1,0 +1,39 @@
+{
+	"[rust]": {
+		"editor.tabSize": 4,
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+		"editor.formatOnSave": true
+	},
+
+	// https://benw.is/posts/easy-leptos-editor
+	"rust-analyzer": {
+		"rustfmt": {
+			"overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"]
+		}
+	},
+
+	// https://book.leptos.dev/getting_started/leptos_dx.html
+	// "rust-analyzer.procMacro.ignored": {
+	// 	"leptos_macro": [
+	// 		// optional:
+	// 		// "component",
+	// 		"server"
+	// 	]
+	// },
+	// if code that is cfg-gated for the `ssr` feature is shown as inactive,
+	// you may want to tell rust-analyzer to enable the `ssr` feature by default
+	//
+	// you can also use `rust-analyzer.cargo.allFeatures` to enable all features
+	"rust-analyzer.cargo.features": ["ssr"],
+
+	// Tailwind CSS IntelliSense settings
+	"tailwindCSS.includeLanguages": {
+		"rust": "html"
+	},
+	"tailwindCSS.emmetCompletions": true,
+
+	"tailwindCSS.experimental.classRegex": [
+		["tw_merge!\\(([^)]*)\\)"],
+		["#[tw\\\\([^\\]]*class\\s*=\\s*\"([^\"]*)\"\\)]", "\"([^\"]*)\""]
+	]
+}
